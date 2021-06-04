@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 21:06:51 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/03 18:35:07 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/04 18:24:41 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "libft/libft.h"
+#include "libft_42/libft.h"
 #include "liblist/liblist.h"
 #include "gnl/get_next_line60.h"
 
