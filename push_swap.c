@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:14:26 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/03 18:56:36 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/05 22:23:43 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,10 +116,10 @@ void		find_closestn_chunk(t_stack **stack,char selected_stack,int minnum_chunk, 
 		{
 			rra_rrb(stack);
 			
-			/*if(selected_stack == 'a')
+			if(selected_stack == 'a')
 				ft_putstr("rra\n");
 			else
-				ft_putstr("rrb\n");*/
+				ft_putstr("rrb\n");
 			i++;
 		}
 	}
@@ -128,10 +128,10 @@ void		find_closestn_chunk(t_stack **stack,char selected_stack,int minnum_chunk, 
 		while(i < hold_first)
 		{
 			ra_rb(stack);
-			/*if(selected_stack == 'a')
+			if(selected_stack == 'a')
 				ft_putstr("ra\n");
 			else
-				ft_putstr("rb\n");*/
+				ft_putstr("rb\n");
 			i++;
 		}
 	}
@@ -151,39 +151,45 @@ void		pushswap(t_stack **stack_a,t_stack **stack_b,char **splited_args)
 
 	defchunk(&chunk, splited_args);
 	sorted_stack_a = ft_bubble_sort(linkedlisttointarray(*stack_a),ft_bidstrlen(splited_args));
-
-	//STACKA TO STACKB
-	while(x < chunk.n_chunks)
-	{
-		chunk.minnum_chunk = sorted_stack_a[chunk.n_perchunk * x];
-		chunk.maxnum_chunk = sorted_stack_a[chunk.n_perchunk * x] + chunk.n_perchunk - 1;
-		while(i < chunk.n_perchunk)
+	
+	if(chunk.n_args == 3)
+		three_sort(stack_a);
+	else if(chunk.n_args == 5)
+		printf("Order 5 nums\n");
+	else{
+		//STACKA TO STACKB
+		while(x < chunk.n_chunks)
 		{
-			find_closestn_chunk(stack_a,'a', chunk.minnum_chunk, chunk.maxnum_chunk);
-			pa_pb(stack_b,stack_a);
-			//ft_putstr("pb\n");
-			i++;
+			chunk.minnum_chunk = sorted_stack_a[chunk.n_perchunk * x];
+			chunk.maxnum_chunk = sorted_stack_a[chunk.n_perchunk * x] + chunk.n_perchunk - 1;
+			while(i < chunk.n_perchunk)
+			{
+				find_closestn_chunk(stack_a,'a', chunk.minnum_chunk, chunk.maxnum_chunk);
+				pa_pb(stack_b,stack_a);
+				ft_putstr("pb\n");
+				i++;
+			}
+			i = 0;
+			x++;
 		}
-		i = 0;
-		x++;
-	}
-	chunk.minnum_chunk = chunk.maxnum_chunk + 1;
+		chunk.minnum_chunk = chunk.maxnum_chunk + 1;
 
-	while(ft_lstsize(stack_a[0]))
-	{
-		find_closestn_chunk(stack_a,'a', chunk.minnum_chunk, sorted_stack_a[ft_bidstrlen(splited_args)-1]);
-		pa_pb(stack_b,stack_a);
-		//ft_putstr("pb\n");
-	}
-	//STACKB TO STACKA
-	i = 1;
-	while(ft_lstsize(stack_b[0]))
-	{
-		find_closestn_chunk(stack_b,'b', sorted_stack_a[chunk.n_args - i], sorted_stack_a[chunk.n_args - i]);
-		pa_pb(stack_a,stack_b);
-		//ft_putstr("pa\n");
-		i++;
-		
+		while(ft_lstsize(stack_a[0]))
+		{
+			find_closestn_chunk(stack_a,'a', chunk.minnum_chunk, sorted_stack_a[ft_bidstrlen(splited_args)-1]);
+			pa_pb(stack_b,stack_a);
+			ft_putstr("pb\n");
+		}
+		//STACKB TO STACKA
+		i = 1;
+		while(ft_lstsize(stack_b[0]))
+		{
+			find_closestn_chunk(stack_b,'b', sorted_stack_a[chunk.n_args - i], sorted_stack_a[chunk.n_args - i]);
+			pa_pb(stack_a,stack_b);
+			ft_putstr("pa\n");
+			i++;
+			
+		}
 	}
 
 }

@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 21:13:45 by msantos-          #+#    #+#              #
-#    Updated: 2021/06/04 18:24:23 by msantos-         ###   ########.fr        #
+#    Updated: 2021/06/05 22:21:10 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ PUSHSWAP = push_swap
 HEADER  = push_swap.h
 
 CHECKER_SRCS = checker.c
-PUSHSWAP_SRCS = push_swap.c
+PUSHSWAP_SRCS = push_swap.c order_3.c
 
 LIB_LIST = liblist/ft_lstadd_back.c liblist/ft_lstadd_front.c liblist/ft_lstclear.c liblist/ft_lstdelone.c \
 			liblist/ft_lstiter.c liblist/ft_lstlast.c liblist/ft_lstmap.c liblist/ft_lstnew.c liblist/ft_lstsize.c

@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 21:06:51 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/04 18:24:41 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/05 22:20:47 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		*bid_chartoint(char **bid_char);
 t_stack	*greater(t_stack *head);
 t_stack	*position_node(t_stack *head, int position);
 t_stack	*smaller(t_stack *head);
+void	three_sort(t_stack **stack);
 
 //UTILS.C
 int		str_error(char *s);
@@ -53,5 +54,7 @@ void	rra_rrb(t_stack **stack);
 
 //TEST
 void	print_stacks(t_stack *stack_a,t_stack *stack_b);
+
+
 
 # endif
