@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 21:06:51 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/06 14:01:25 by marcos           ###   ########.fr       */
+/*   Updated: 2021/06/06 19:53:32 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_stack	*position_node(t_stack *head, int position);
 t_stack	*smaller(t_stack *head);
 void	three_sort(t_stack **stack);
 void	five_sort(t_stack **stack_a, t_stack **stack_b);
+void		find_closestn_chunk(t_stack **stack,char selected_stack,int minnum_chunk, int maxnum_chunk);
 
 //UTILS.C
 int		str_error(char *s);

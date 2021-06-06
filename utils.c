@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:59:16 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/03 18:34:58 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/06 20:53:38 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,10 @@ int     str_isnumber(char *str)
     {
 		if (!(str[i] >= '0' && str[i] <= '9') && str[i] != ' ' && str[i] != '-')
 				return(0);
-		else if(str[i] == '-' && !(str[i + 1] >='0' && str[i + 1] <= '9'))
+		else if(str[i] == '-' && !(str[i + 1] > '0' && str[i + 1] <= '9'))
 				return(0);
+		else if(str[i] == '-' && (str[i - 1] >= '0' && str[i - 1] <= '9'))
+			return (0);
         i++;
     }
     return (1);

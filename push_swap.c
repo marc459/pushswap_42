@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:14:26 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/06 14:13:29 by marcos           ###   ########.fr       */
+/*   Updated: 2021/06/06 20:40:56 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,17 @@ void		pushswap(t_stack **stack_a,t_stack **stack_b,char **splited_args)
 	}
 
 }
+char	*ft_iteratespaces(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i] == ' ')
+		i++;
+		
+
+	return(str + i);
+}
 
 int     main(int argc, char **argv)
 {
@@ -202,11 +213,11 @@ int     main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 
-    if (argc == 1)
+    if (argc == 1 || (argc == 2 && ft_strcmp(ft_iteratespaces(argv[1]),"\0")))
         return (-1);
 	str_args = concatenate_args(argv + 1, argc - 1);
 	if (!arg_checker(ft_split(str_args,' ')))
-		str_error("Error\n");
+		str_error("Error1\n");
    	arg_save(&stack_a,str_args);
 	if(!already_sort(stack_a))
 		pushswap(&stack_a,&stack_b,ft_split(str_args,' '));

@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:54:15 by msantos-          #+#    #+#             */
-/*   Updated: 2021/05/27 20:07:57 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/06 19:57:25 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int     main(int argc, char **argv)
 
 	operation = NULL;
 
-    if (argc == 1)
+    if (argc == 1 || (argc == 2 && ft_strcmp(argv[1],"\0")))
         return (-1);
 
 	str_args = concatenate_args(argv + 1, argc - 1);
