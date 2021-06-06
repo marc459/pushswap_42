@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:58:45 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/06 20:48:52 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:40:50 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,56 +26,56 @@ char	*concatenate_args(char **args, int size)
 		args_str = ft_strjoin(args_str, tmp);
 		free(tmp);
 	}
-	return(args_str);
+	return (args_str);
 }
 
 void	arg_save(t_stack **stack_a, char *str_args)
 {
-	int i;
-	long num;
-	char **splited_args; 
-	t_stack *aux;
-	t_stack *newnode;
-	
+	int		i;
+	long	num;
+	char	**splited_args;
+	t_stack	*aux;
+	t_stack	*newnode;
+
 	newnode = NULL;
 	i = 0;
-	splited_args = ft_split(str_args,' ');
-	while(i < ft_bidstrlen(splited_args))
+	splited_args = ft_split(str_args, ' ');
+	while (i < ft_bidstrlen(splited_args))
 	{
 		num = ft_atol(splited_args[i]);
-		if(num > 2147483647 || num < -2147483648)
+		if (num > 2147483647 || num < -2147483648)
 			str_error("Error\n");
 		aux = newnode;
 		newnode = ft_lstnew(num);
 		newnode->prev = aux;
-		ft_lstadd_back(stack_a,newnode);
+		ft_lstadd_back(stack_a, newnode);
 		i++;
 	}
 	free_double_ptr(splited_args);
 }
- 
-int     arg_checker(char **splited_args)
-{
-    int i;
-	int j;
 
-    i = 0;
+int	arg_checker(char **splited_args)
+{
+	int		i;
+	int		j;
+
+	i = 0;
 	j = 0;
-    while (i < ft_bidstrlen(splited_args))
-    {
-        if(!str_isnumber(splited_args[i]))
-            return (0);
-		while(j < ft_bidstrlen(splited_args))
+	while (i < ft_bidstrlen(splited_args))
+	{
+		if (!str_isnumber(splited_args[i]))
+			return (0);
+		while (j < ft_bidstrlen(splited_args))
 		{
-			if(ft_strcmp(splited_args[i],splited_args[j]) && i != j)
+			if (ft_strcmp(splited_args[i], splited_args[j]) && i != j)
 				return (0);
 			j++;
 		}
 		j = 0;
-        i++;
-    }
+		i++;
+	}
 	free_double_ptr(splited_args);
-    return(1);
+	return (1);
 }
 
 void	free_double_ptr(char **s)

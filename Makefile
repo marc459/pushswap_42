@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marcos <marcos@student.42.fr>              +#+  +:+       +#+         #
+#    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 21:13:45 by msantos-          #+#    #+#              #
-#    Updated: 2021/06/06 13:54:34 by marcos           ###   ########.fr        #
+#    Updated: 2021/06/06 21:52:22 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ LIB_LIST = liblist/ft_lstadd_back.c liblist/ft_lstadd_front.c liblist/ft_lstclea
 LIBFT = libft_42/libft.a
 GNL = gnl/get_next_line60.c
 
-SRCS = arg_manage.c operations.c utils.c push_swap2.c
+SRCS = arg_manage.c operations.c utils.c
 
 
 CFLAGS = -Wall -Wextra -Werror 
