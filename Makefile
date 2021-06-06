@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
+#    By: marcos <marcos@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 21:13:45 by msantos-          #+#    #+#              #
-#    Updated: 2021/06/05 22:21:10 by msantos-         ###   ########.fr        #
+#    Updated: 2021/06/06 13:54:34 by marcos           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ PUSHSWAP = push_swap
 HEADER  = push_swap.h
 
 CHECKER_SRCS = checker.c
-PUSHSWAP_SRCS = push_swap.c order_3.c
+PUSHSWAP_SRCS = push_swap.c order_3.c order_5.c
 
 LIB_LIST = liblist/ft_lstadd_back.c liblist/ft_lstadd_front.c liblist/ft_lstclear.c liblist/ft_lstdelone.c \
 			liblist/ft_lstiter.c liblist/ft_lstlast.c liblist/ft_lstmap.c liblist/ft_lstnew.c liblist/ft_lstsize.c
@@ -35,7 +35,7 @@ GCC = gcc
 all: fclean lib checker push_swap
 
 checker:
-	@$(GCC) $(CFLAGS) $(CHECKER_SRCS) $(SRCS) $(LIB_LIST) $(GNL) $(LIBFT) test.c -o $@
+	@$(GCC) $(CHECKER_SRCS) $(SRCS) $(LIB_LIST) $(GNL) $(LIBFT) test.c -o $@
 #$(FLAGS)
 
 push_swap:

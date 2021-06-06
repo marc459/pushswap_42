@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:14:26 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/05 22:23:43 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/06 14:13:29 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,14 +148,13 @@ void		pushswap(t_stack **stack_a,t_stack **stack_b,char **splited_args)
 
 	i = 0;
 	x = 0;
-
 	defchunk(&chunk, splited_args);
-	sorted_stack_a = ft_bubble_sort(linkedlisttointarray(*stack_a),ft_bidstrlen(splited_args));
+	sorted_stack_a = ft_bubble_sort(linkedlisttointarray(*stack_a),chunk.n_args);
 	
 	if(chunk.n_args == 3)
 		three_sort(stack_a);
 	else if(chunk.n_args == 5)
-		printf("Order 5 nums\n");
+		five_sort(stack_a,stack_b);
 	else{
 		//STACKA TO STACKB
 		while(x < chunk.n_chunks)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 21:06:51 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/05 22:20:47 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/06 14:01:25 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_stack	*greater(t_stack *head);
 t_stack	*position_node(t_stack *head, int position);
 t_stack	*smaller(t_stack *head);
 void	three_sort(t_stack **stack);
+void	five_sort(t_stack **stack_a, t_stack **stack_b);
 
 //UTILS.C
 int		str_error(char *s);
