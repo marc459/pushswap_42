@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:14:26 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/06 20:40:56 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:10:29 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,8 @@ void		pushswap(t_stack **stack_a,t_stack **stack_b,char **splited_args)
 	
 	if(chunk.n_args == 3)
 		three_sort(stack_a);
+	if(chunk.n_args == 4)
+		five_sort(stack_a,stack_b);
 	else if(chunk.n_args == 5)
 		five_sort(stack_a,stack_b);
 	else{
