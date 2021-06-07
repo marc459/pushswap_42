@@ -6,11 +6,11 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 13:53:48 by marcos            #+#    #+#             */
-/*   Updated: 2021/06/06 21:47:42 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:25:51 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	five_sort(t_stack **stack_a, t_stack **stack_b)
 {

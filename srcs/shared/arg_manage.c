@@ -6,11 +6,11 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:58:45 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/06 21:40:50 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:25:56 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 char	*concatenate_args(char **args, int size)
 {

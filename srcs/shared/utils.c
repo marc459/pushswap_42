@@ -6,29 +6,11 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:59:16 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/06 21:51:52 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/07 17:08:48 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	*linkedlisttointarray(t_stack *lst)
-{
-	int	lstsize;
-	int	*arrayint;
-	int	i;
-
-	i = 0;
-	lstsize = ft_lstsize(lst);
-	arrayint = malloc(sizeof(int) * lstsize);
-	while (i < lstsize)
-	{
-		arrayint[i] = lst->content;
-		lst = lst->next;
-		i++;
-	}
-	return (arrayint);
-}
+#include "../../includes/push_swap.h"
 
 void	print_node(int content)
 {

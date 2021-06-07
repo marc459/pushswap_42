@@ -6,11 +6,11 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:54:15 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/06 21:48:19 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:27:05 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "includes/push_swap.h"
 
 void	exec_operation(char *operation, t_stack **stack_a, t_stack **stack_b)
 {
