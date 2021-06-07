@@ -16,7 +16,7 @@ https://www.youtube.com/watch?v=ABZIs-lMSlA&ab_channel=AsaelHern%C3%A1ndez
 ARG=$(ruby -e "puts (0..100).to_a.shuffle.join(' ')");  ./push_swap $ARG | ./checker $ARG
 
 //LEAK
-while true:do leaks checker;sleep 1;done
+while true;do leaks checker;sleep 1;done
 
 //CHECK LINES PUSHSWAP
 make && ARG=$(ruby -e "puts (0..99).to_a.shuffle.join(' ')");  ./push_swap $ARG | wc -l

@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:14:26 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/07 18:03:04 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/07 18:39:56 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	defchunk(t_chunk *chunk, char **splited_args)
 		chunk->n_chunks = 6;
 	else if (250 <= chunk->n_args && chunk->n_args < 350)
 		chunk->n_chunks = 8;
-	else if (350 <= chunk->n_args && chunk->n_args <= 500)
+	else if (350 <= chunk->n_args && chunk->n_args < 450)
 		chunk->n_chunks = 10;
-	else if (chunk->n_args > 500)
+	else if (chunk->n_args >= 450)
 		chunk->n_chunks = 11;
 	chunk->n_perchunk = chunk->n_args / chunk->n_chunks;
 }
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 	arg_save(&stack_a, concatenate_args(argv + 1, argc - 1));
 	if (!already_sort(stack_a))
 		pushswap(&stack_a, &stack_b, ft_split(str_args, ' '));
-	print_stacks(stack_a, stack_b);
+	//print_stacks(stack_a, stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
