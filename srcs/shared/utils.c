@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:59:16 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/07 17:08:48 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/08 21:23:54 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 void	print_node(int content)
 {
 	char	*str;
+	int		*cont;
 
-	str = ft_strjoin(ft_itoa(content), " ");
+	cont = ft_itoa(content);
+	str = ft_strjoin(cont, " ");
 	ft_putstr(str);
 	free(str);
+	free(cont);
 }
 
 int	str_error(char *s)

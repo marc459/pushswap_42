@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:58:45 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/08 19:52:58 by marcos           ###   ########.fr       */
+/*   Updated: 2021/06/08 21:25:40 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,22 @@
 char	*concatenate_args(char **args, int size)
 {
 	char	*tmp;
+	char	*tmp2;
 	char	*args_str;
 	int		i;
-
-	args_str = ft_strjoin(args[0], " ");
+	
+	
+	tmp2 = ft_strjoin(args[0], " ");
 	i = 0;
-	while (++i < size)
+	while (i < size)
 	{
 		tmp = ft_strjoin(args[i], " ");
-		args_str = ft_strjoin(args_str, tmp);
+		args_str = ft_strjoin(tmp2, tmp);
 		free(tmp);
+		free(tmp2);
+		tmp2 = args_str;
+		i++;
 	}
-	//free_double_ptr(args); //NO LE MOLA
 	return (args_str);
 }
 
@@ -64,6 +68,7 @@ int	arg_checker(char **splited_args)
 	j = 0;
 	while (i < ft_bidstrlen(splited_args))
 	{
+		
 		if (!str_isnumber(splited_args[i]))
 			return (0);
 		while (j < ft_bidstrlen(splited_args))
