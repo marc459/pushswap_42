@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:58:45 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/08 19:06:10 by marcos           ###   ########.fr       */
+/*   Updated: 2021/06/08 19:52:58 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*concatenate_args(char **args, int size)
 		args_str = ft_strjoin(args_str, tmp);
 		free(tmp);
 	}
-	free_double_ptr(args);
+	//free_double_ptr(args); //NO LE MOLA
 	return (args_str);
 }
 
