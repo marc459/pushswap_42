@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_100.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:45:11 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/07 18:05:09 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:22:18 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,5 @@ void	onehundred_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunk)
 		ft_putstr("pa\n");
 		i++;
 	}
+	free(sorted_stack_a);
 }

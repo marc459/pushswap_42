@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:14:26 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/07 18:39:56 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:18:53 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	pushswap(t_stack **stack_a, t_stack **stack_b, char **splited_args)
 		five_sort(stack_a, stack_b);
 	else
 		onehundred_sort(stack_a, stack_b, &chunk);
+	free_double_ptr(splited_args);
 }
 
 int	main(int argc, char **argv)
@@ -59,6 +60,7 @@ int	main(int argc, char **argv)
 	if (!already_sort(stack_a))
 		pushswap(&stack_a, &stack_b, ft_split(str_args, ' '));
 	//print_stacks(stack_a, stack_b);
+	free(str_args);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
