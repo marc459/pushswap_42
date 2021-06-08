@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:58:45 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/08 21:25:40 by marcos           ###   ########.fr       */
+/*   Updated: 2021/06/08 21:36:28 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*concatenate_args(char **args, int size)
 	
 	
 	tmp2 = ft_strjoin(args[0], " ");
-	i = 0;
+	i = 1;
 	while (i < size)
 	{
 		tmp = ft_strjoin(args[i], " ");
@@ -34,17 +34,15 @@ char	*concatenate_args(char **args, int size)
 	return (args_str);
 }
 
-void	arg_save(t_stack **stack_a, char *str_args)
+void	arg_save(t_stack **stack_a, char **splited_args)
 {
 	int		i;
 	long	num;
-	char	**splited_args;
 	t_stack	*aux;
 	t_stack	*newnode;
 
 	newnode = NULL;
 	i = 0;
-	splited_args = ft_split(str_args, ' ');
 	while (i < ft_bidstrlen(splited_args))
 	{
 		num = ft_atol(splited_args[i]);
@@ -56,7 +54,6 @@ void	arg_save(t_stack **stack_a, char *str_args)
 		ft_lstadd_back(stack_a, newnode);
 		i++;
 	}
-	free_double_ptr(splited_args);
 }
 
 int	arg_checker(char **splited_args)
@@ -80,7 +77,6 @@ int	arg_checker(char **splited_args)
 		j = 0;
 		i++;
 	}
-	free_double_ptr(splited_args);
 	return (1);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 21:06:51 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/07 18:05:20 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/08 21:34:04 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		*bidchartointarray(char **bid_char);
 
 //ARG_MANAGEMENT.C
 int		arg_checker(char **splited_args);
-void	arg_save(t_stack **stack_a, char *str_args);
+void	arg_save(t_stack **stack_a, char **splited_args);
 char	*concatenate_args(char **args, int size);
 void	free_double_ptr(char **s);
 
