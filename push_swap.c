@@ -6,7 +6,7 @@
 /*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:14:26 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/08 21:37:18 by marcos           ###   ########.fr       */
+/*   Updated: 2021/06/08 21:42:47 by marcos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,14 @@ void	pushswap(t_stack **stack_a, t_stack **stack_b, char **splited_args)
 int	main(int argc, char **argv)
 {
 	char	**bidargs;
+	char	*concatargs;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	bidargs = ft_split(concatenate_args(argv + 1, argc - 1), ' ');
+	concatargs = concatenate_args(argv + 1, argc - 1);
+	bidargs = ft_split(concatargs, ' ');
 	
 	if (argc == 1 || (argc == 2 && ft_strcmp(ft_iteratespaces(argv[1]), "\0")))
 		return (-1);
@@ -60,6 +62,7 @@ int	main(int argc, char **argv)
 	if (!already_sort(stack_a))
 		pushswap(&stack_a, &stack_b, bidargs);
 	print_stacks(stack_a, stack_b);
+	free(concatargs);
 	free_double_ptr(bidargs);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
