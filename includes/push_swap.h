@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 21:06:51 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/08 21:34:04 by marcos           ###   ########.fr       */
+/*   Updated: 2021/06/09 19:22:36 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_chunk{
 
 //PUSSWAP
 int		*bid_chartoint(char **bid_char);
+void	two_sort(t_stack **stack);
 void	three_sort(t_stack **stack);
 void	three_sort_2(t_stack **stack);
 void	five_sort(t_stack **stack_a, t_stack **stack_b);

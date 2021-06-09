@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   order_3.c                                          :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 18:39:33 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/07 17:39:02 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/09 19:23:47 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+void	two_sort(t_stack **stack)
+{
+	int	num1;
+	int	num2;
+
+	num1 = (*stack)->content;
+	num2 = (*stack)->next->content;
+	if (num1 > num2)
+	{
+		sa_sb(stack);
+		ft_putstr("sa\n");
+	}
+}
 
 void	three_sort(t_stack **stack)
 {
