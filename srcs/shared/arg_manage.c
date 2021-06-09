@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_manage.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:58:45 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/08 21:36:28 by marcos           ###   ########.fr       */
+/*   Updated: 2021/06/09 16:37:12 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ char	*concatenate_args(char **args, int size)
 	char	*tmp2;
 	char	*args_str;
 	int		i;
-	
-	
+
 	tmp2 = ft_strjoin(args[0], " ");
 	i = 1;
 	while (i < size)
@@ -65,7 +64,6 @@ int	arg_checker(char **splited_args)
 	j = 0;
 	while (i < ft_bidstrlen(splited_args))
 	{
-		
 		if (!str_isnumber(splited_args[i]))
 			return (0);
 		while (j < ft_bidstrlen(splited_args))

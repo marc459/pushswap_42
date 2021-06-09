@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 14:28:38 by msantos-          #+#    #+#             */
-/*   Updated: 2021/04/17 12:50:48 by marcos           ###   ########.fr       */
+/*   Updated: 2021/06/09 16:47:50 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "liblist.h"
 
-t_stack		*ft_lstlast(t_stack *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
 	while (ft_lstsize(lst) > 1)
 	{

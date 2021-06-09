@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 21:13:45 by msantos-          #+#    #+#              #
-#    Updated: 2021/06/07 17:55:43 by msantos-         ###   ########.fr        #
+#    Updated: 2021/06/09 16:40:42 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,10 @@ push_swap:
 lib:
 	@make -C ./libft_42
 	@make clean -C ./libft_42
+normi:
+	norminette *.c
+	norminette libft_42/*.c
+	norminette liblist/*.c
 
 clean:
 	@rm -f $(CHECKER)
