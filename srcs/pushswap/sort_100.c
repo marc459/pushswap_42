@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_100.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:45:11 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/08 20:03:32 by marcos           ###   ########.fr       */
+/*   Updated: 2021/06/09 18:44:38 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	onehundred_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunk)
 
 	i = 0;
 	x = 0;
-	sorted_stack_a = ft_bubble_sort(linkedlisttointarray(*stack_a), chunk->n_args);
+	sorted_stack_a = ft_bubble_sort(linkedlisttointarray(*stack_a),
+			chunk->n_args);
 	while (x < chunk->n_chunks)
 	{
 		chunk->minnum_chunk = sorted_stack_a[chunk->n_perchunk * x];

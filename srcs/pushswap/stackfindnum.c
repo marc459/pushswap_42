@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stackfindnum.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcos <marcos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:45:06 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/08 19:46:49 by marcos           ###   ########.fr       */
+/*   Updated: 2021/06/09 18:44:56 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ int	find_holdlast(t_stack **stack_a, int minnum_chunk, int maxnum_chunk)
 	return (hold_last);
 }
 
-void	find_closestn_chunk(t_stack **stack, char selected_stack, int minnum_chunk, int maxnum_chunk)
+void	find_closestn_chunk(t_stack **stack, char selected_stack,
+	int minnum_chunk, int maxnum_chunk)
 {
 	int	hold_first;
 	int	hold_last;
