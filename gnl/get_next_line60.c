@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 14:35:59 by marcos            #+#    #+#             */
-/*   Updated: 2021/06/09 18:18:19 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/10 21:17:36 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	get_next_line(char **line)
 	char	buf[2];
 
 	*line = ft_strdup("");
-	if (line == NULL || !line)
+	if (line == NULL || !*line)
 		return (-1);
 	ret = read(0, buf, 1);
 	while (ret > 0)
@@ -44,6 +44,7 @@ int	get_next_line(char **line)
 		if (buf[0] == '\n')
 			break ;
 		*line = ft_strjoint(*line, buf[0]);
+		ret = read(0, buf, 1);
 	}
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:54:15 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/07 16:27:05 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/10 22:09:53 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,30 +68,33 @@ int	checker(t_stack *stack_a, t_stack *stack_b)
 int	main(int argc, char **argv)
 {
 	char	*operation;
-	char	*str_args;
+	char	**bidargs;
+	char	*concatargs;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	operation = NULL;
+	concatargs = concatenate_args(argv + 1, argc - 1);
+	bidargs = ft_split(concatargs, ' ');
 	if (argc == 1 || (argc == 2 && ft_strcmp(argv[1], "\0")))
 		return (-1);
-	str_args = concatenate_args(argv + 1, argc - 1);
-	if (!arg_checker(ft_split(str_args, ' ')))
+	if (!arg_checker(bidargs))
 		str_error("Error\n");
-	arg_save(&stack_a, str_args);
+	arg_save(&stack_a, bidargs);
 	while (get_next_line(&operation) > 0 && !ft_strcmp(operation, "\0"))
 	{
 		exec_operation(operation, &stack_a, &stack_b);
 		free(operation);
 	}
 	free(operation);
-	print_stacks(stack_a, stack_b);
+	//print_stacks(stack_a, stack_b);
 	if (checker(stack_a, stack_b))
 		ft_putstr("OK\n");
 	else
 		ft_putstr("KO\n");
+	free_double_ptr(bidargs);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
