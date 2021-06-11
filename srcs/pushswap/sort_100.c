@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:45:11 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/11 17:03:58 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/11 17:49:34 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ void	pushtostackb_chunks(t_stack **stack_a,
 void	onehundred_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunk)
 {
 	int		*sorted_args;
+	int		*args;
 	int		i;
 
-	i = 0;
-	sorted_args = ft_bubble_sort(linkedlisttointarray(*stack_a),
-			chunk->n_args);
+	args = linkedlisttointarray(*stack_a);
+	sorted_args = ft_bubble_sort(args, chunk->n_args);
 	pushtostackb_chunks(stack_a, stack_b, chunk, sorted_args);
 	while (ft_lstsize(stack_a[0]))
 	{
@@ -65,4 +65,5 @@ void	onehundred_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunk)
 		i++;
 	}
 	free(sorted_args);
+	free(args);
 }

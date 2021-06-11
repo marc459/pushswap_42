@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:58:45 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/09 19:05:09 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/11 17:42:10 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
 char	*concatenate_args(char **args, int size)
 {
 	char	*tmp;
+	char	*tmp2;
 	char	*args_str;
 	int		i;
 
-	args_str = ft_strjoin(args[0], " ");
+	tmp2 = ft_strjoin(args[0], " ");
 	i = 1;
 	while (i < size)
 	{
 		tmp = ft_strjoin(args[i], " ");
-		args_str = ft_strjoin(args_str, tmp);
+		args_str = ft_strjoin(tmp2, tmp);
 		free(tmp);
+		free(tmp2);
+		tmp2 = args_str;
 		i++;
 	}
 	return (args_str);
