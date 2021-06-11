@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:45:11 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/09 18:44:38 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:18:35 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ void	onehundred_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunk)
 	while (x < chunk->n_chunks)
 	{
 		chunk->minnum_chunk = sorted_stack_a[chunk->n_perchunk * x];
-		chunk->maxnum_chunk = sorted_stack_a[chunk->n_perchunk * x]
-			+ chunk->n_perchunk - 1;
+		chunk->maxnum_chunk = sorted_stack_a[chunk->n_perchunk * x + chunk->n_perchunk - 1];
+			
+		/*printf("chunk: %d\n",x);
+		printf("chunk: %d min: %d max: %d\n",x,chunk->minnum_chunk,chunk->maxnum_chunk);
+		print_stacks(*stack_a, *stack_b);*/
 		while (i < chunk->n_perchunk)
 		{
 			find_closestn_chunk(stack_a, 'a', chunk->minnum_chunk,
@@ -38,6 +41,7 @@ void	onehundred_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunk)
 		i = 0;
 		x++;
 	}
+	
 	chunk->minnum_chunk = chunk->maxnum_chunk + 1;
 	while (ft_lstsize(stack_a[0]))
 	{
