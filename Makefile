@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 21:13:45 by msantos-          #+#    #+#              #
-#    Updated: 2021/06/10 20:37:27 by msantos-         ###   ########.fr        #
+#    Updated: 2021/06/11 18:58:14 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SANITIZE= -fsanitize=address
 
 GCC = gcc
 
-all: fclean lib checker push_swap
+all: lib checker push_swap
 
 checker:
 	@$(GCC) $(CHECKER_SRCS) $(SRCS) $(LIB_LIST) $(GNL) $(LIBFT) -o $@
