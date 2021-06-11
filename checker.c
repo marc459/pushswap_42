@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:54:15 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/10 22:09:53 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:28:08 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	main(int argc, char **argv)
 		free(operation);
 	}
 	free(operation);
-	//print_stacks(stack_a, stack_b);
+	print_stacks(stack_a, stack_b);
 	if (checker(stack_a, stack_b))
 		ft_putstr("OK\n");
 	else
