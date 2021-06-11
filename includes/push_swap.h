@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 21:06:51 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/11 16:15:44 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/11 17:22:41 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int		find_holdlast(t_stack **stack_a, int minnum_chunk, int maxnum_chunk);
 void	onehundred_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunk);
 void	onehundred_sort2(t_stack **stack_a,
 			t_stack **stack_b, t_chunk *chunk, int	*s_stack_a);
-
+//CHECKER
+void	freeandresult(t_stack **stack_a, t_stack **stack_b);
 //UTILS.C
 int		str_error(char *s);
 int		str_isnumber(char *str);

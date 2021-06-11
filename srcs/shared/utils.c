@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:59:16 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/11 13:56:38 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/11 17:23:05 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	print_node(int content)
 {
 	char	*str;
-	char		*cont;
+	char	*cont;
 
 	cont = ft_itoa(content);
 	str = ft_strjoin(cont, " ");

@@ -6,13 +6,13 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:54:15 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/11 12:28:08 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/11 17:21:18 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	exec_operation(char *operation, t_stack **stack_a, t_stack **stack_b)
+int	exec_operation2(char *operation, t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_strcmp(operation, "sa\0"))
 		sa_sb(stack_a);
@@ -27,7 +27,14 @@ void	exec_operation(char *operation, t_stack **stack_a, t_stack **stack_b)
 		pa_pb(stack_a, stack_b);
 	else if (ft_strcmp(operation, "pb\0"))
 		pa_pb(stack_b, stack_a);
-	else if (ft_strcmp(operation, "ra\0"))
+	else
+		return (0);
+	return (1);
+}
+
+void	exec_operation(char *operation, t_stack **stack_a, t_stack **stack_b)
+{	
+	if (ft_strcmp(operation, "ra\0"))
 		ra_rb(stack_a);
 	else if (ft_strcmp(operation, "rb\0"))
 		ra_rb(stack_b);
@@ -45,7 +52,7 @@ void	exec_operation(char *operation, t_stack **stack_a, t_stack **stack_b)
 		rra_rrb(stack_a);
 		rra_rrb(stack_b);
 	}
-	else
+	else if (!exec_operation2(operation, stack_a, stack_b))
 		ft_putstr("Error\nWrite a valid operation:\n");
 }
 
@@ -63,6 +70,16 @@ int	checker(t_stack *stack_a, t_stack *stack_b)
 			return (0);
 	}
 	return (1);
+}
+
+void	freeandresult(t_stack **stack_a, t_stack **stack_b)
+{
+	if (checker(*stack_a, *stack_b))
+		ft_putstr("OK\n");
+	else
+		ft_putstr("KO\n");
+	free_stack(stack_a);
+	free_stack(stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -89,13 +106,7 @@ int	main(int argc, char **argv)
 		free(operation);
 	}
 	free(operation);
-	print_stacks(stack_a, stack_b);
-	if (checker(stack_a, stack_b))
-		ft_putstr("OK\n");
-	else
-		ft_putstr("KO\n");
 	free_double_ptr(bidargs);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
+	freeandresult(&stack_a, &stack_b);
 	return (0);
 }
