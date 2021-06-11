@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:45:06 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/11 12:17:00 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/11 17:01:51 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,13 @@ int	find_holdlast(t_stack **stack_a, int minnum_chunk, int maxnum_chunk)
 	return (hold_last);
 }
 
+void	ft_printstackoperation(char *op, char selected_stack)
+{
+	ft_putstr(op);
+	ft_putchar(selected_stack);
+	ft_putchar('\n');
+}
+
 void	find_closestn_chunk(t_stack **stack, char selected_stack,
 	int minnum_chunk, int maxnum_chunk)
 {
@@ -68,10 +75,7 @@ void	find_closestn_chunk(t_stack **stack, char selected_stack,
 		while (i < hold_last)
 		{
 			rra_rrb(stack);
-			if (selected_stack == 'a')
-				ft_putstr("rra\n");
-			else
-				ft_putstr("rrb\n");
+			ft_printstackoperation("rr", selected_stack);
 			i++;
 		}
 	}
@@ -80,10 +84,7 @@ void	find_closestn_chunk(t_stack **stack, char selected_stack,
 		while (i < hold_first)
 		{
 			ra_rb(stack);
-			if (selected_stack == 'a')
-				ft_putstr("ra\n");
-			else
-				ft_putstr("rb\n");
+			ft_printstackoperation("r", selected_stack);
 			i++;
 		}
 	}

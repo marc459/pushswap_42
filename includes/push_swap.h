@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 21:06:51 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/09 19:22:36 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/11 16:15:44 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	find_closestn_chunk(t_stack **stack, char selected_stack,
 int		find_holdfirst(t_stack **stack_a, int minnum_chunk, int maxnum_chunk);
 int		find_holdlast(t_stack **stack_a, int minnum_chunk, int maxnum_chunk);
 void	onehundred_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunk);
+void	onehundred_sort2(t_stack **stack_a,
+			t_stack **stack_b, t_chunk *chunk, int	*s_stack_a);
 
 //UTILS.C
 int		str_error(char *s);
