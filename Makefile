@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 21:13:45 by msantos-          #+#    #+#              #
-#    Updated: 2021/06/11 18:58:14 by msantos-         ###   ########.fr        #
+#    Updated: 2021/06/12 18:48:22 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,11 +35,11 @@ GCC = gcc
 all: lib checker push_swap
 
 checker:
-	@$(GCC) $(CHECKER_SRCS) $(SRCS) $(LIB_LIST) $(GNL) $(LIBFT) -o $@
+	$(GCC) $(CHECKER_SRCS) $(SRCS) $(LIB_LIST) $(GNL) $(LIBFT) -o $@
 #$(FLAGS)
 
 push_swap:
-	@$(GCC) $(PUSHSWAP_SRCS) $(SRCS) $(LIB_LIST) $(GNL) $(LIBFT) -o $@
+	$(GCC) $(PUSHSWAP_SRCS) $(SRCS) $(LIB_LIST) $(GNL) $(LIBFT) -o $@
 #$(FLAGS)
 
 lib:

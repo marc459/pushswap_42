@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:54:15 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/11 17:50:38 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/12 18:52:14 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	exec_operation(char *operation, t_stack **stack_a, t_stack **stack_b)
 		rra_rrb(stack_b);
 	}
 	else if (!exec_operation2(operation, stack_a, stack_b))
-		ft_putstr("Error\nWrite a valid operation:\n");
+		str_error("Error\n");
 }
 
 int	checker(t_stack *stack_a, t_stack *stack_b)
