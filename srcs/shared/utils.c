@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:59:16 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/12 18:53:36 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/13 17:08:31 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,6 @@ int	str_error(char *s)
 
 	i = 0;
 	ft_putstr_fd(s, 2);
-	/*while (i < (int)ft_strlen(s))
-	{
-		i++;
-	}*/
 	exit (-1);
 }
 
