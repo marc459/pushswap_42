@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/13 17:37:32 by msantos-          #+#    #+#              #
-#    Updated: 2021/06/13 18:30:37 by msantos-         ###   ########.fr        #
+#    Updated: 2021/06/13 18:45:31 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,17 +39,16 @@ SANITIZE= -fsanitize=address
 all: lib checker push_swap
 
 %.o: %.c
-	$(GCC) $(INCLUDES) -o $@ -c $^
+	$(GCC) $(CFLAGS) $(INCLUDES) -o $@ -c $^
 
 checker: $(CHECKER_O) $(SRCS_O) $(LIBFT_LIST_O) $(GNL_O)
 	$(GCC) $(INCLUDES) $(LIBFT) $(CHECKER_O) $(SRCS_O) $(LIBFT_LIST_O) $(GNL_O) -o $(CHECKER)
 
-push_swap: $(CHECKER_O) $(SRCS_O) $(LIBFT_LIST_O) $(GNL_O)
+push_swap: $(PUSHSWAP_O) $(SRCS_O) $(LIBFT_LIST_O) $(GNL_O)
 	$(GCC) $(INCLUDES) $(LIBFT) $(PUSHSWAP_O) $(SRCS_O) $(LIBFT_LIST_O) $(GNL_O) -o $(PUSHSWAP)
 
 lib:
 	@make -C ./libft_42
-	@make clean -C ./libft_42
 normi:
 	norminette *.c libft_42/*.c libft_42/*.h liblist/*.c liblist/*.h includes/*.h srcs/pushswap/*.c srcs/shared/*.c
 clean:

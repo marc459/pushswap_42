@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:58:45 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/11 19:00:53 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/13 18:45:18 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*concatenate_args(char **args, int size)
 {
 	char	*tmp;
-	char	*tmp2;
 	char	*args_str;
 	int		i;
 
