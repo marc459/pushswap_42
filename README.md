@@ -1,25 +1,25 @@
+HOW TO
+To compile do : make
+
+Execute the 'Pushswap' program and introduce some arguments: ./push_swap "7 9 5 3"
+Pushswap sort all nums and will bring youu back the name of the operations it used.
+
+Execute the 'checker' program and introduce some arguments: ./checker "7 9 5 3"
+Checker check if the arguments received are nums and if they are sorted after recieve some operation from keyboard. If they are it will bring us back a OK if not KO.
+
+To execute checker over pushswap return just use a pipeline:  ./push_swap "7 9 5 3" | ./checker "7 9 5 3"
+
+FUNCTIONALITY
 Pushswap includes two programs:
+Pushswap - 
 
 Checker - this program test the funcionality of the operations used for pushswap for sort a list of numbers.
 It recieves a list of arguments which have to be sorted manually by the user. While user writes the operations name's
 the program has to apply this change.Therefore, when user finally stops writing operations , program will show if numbers had been sorted or not.('OK' or 'KO'). If a mischance occurss while running the programs it will show ('Error');
 
-Pushswap - 
-
-
-
-// LINKED LISTS
-https://www.youtube.com/watch?v=ABZIs-lMSlA&ab_channel=AsaelHern%C3%A1ndez
-
-//CREATE RANDOM PARAMS
-
-ARG=$(ruby -e "puts (0..100).to_a.shuffle.join(' ')");  ./push_swap $ARG | ./checker $ARG
-
 //LEAK
-while true;do leaks checker;sleep 1;done
-
-//CHECK LINES PUSHSWAP
-make && ARG=$(ruby -e "puts (0..99).to_a.shuffle.join(' ')");  ./push_swap $ARG | wc -l
+tty
+while true;do leaks checker;sleep 1;done > /dev/ttys001
 
 //TEST
-ARG="12113 23087 20055 25526 29731 14297 3957 1815 18124 12241 11360 26917 28050 16757 1095 271 10290 246 1014 17000 12142 1333 30563 3739 2623 32665 2638 6039 2628 6337 1435 1092 1244 4810 294 60 854 5292 2871 1018 8908 8689 335 613 15611 15367 795 5053 4088 5498 9858 27368 2881 88 8538 12396 10864 6036 29694 7779 19984 18835 15624 30149 9601 19599 28220 27515 4258 20491 1836 22665 30005 5836 17310 6485 6490 6364 1966 23940 10703 29462 20261 5130 26601 17264 32117 2736 15185 1650 4076 16850 9087 1788 16780 24751 17656 7384 4267 8408" && ./push_swap $ARG | wc -l
+for i in {1..10};do ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; ./push_swap $ARG | wc -l ; done
