@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:58:45 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/13 18:45:18 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/06/13 19:44:03 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,19 @@ int	arg_checker(char **splited_args)
 {
 	int		i;
 	int		j;
+	int		*args;
 
 	i = 0;
 	j = 0;
+	args = bidchartointarray(splited_args);
 	while (i < ft_bidstrlen(splited_args))
 	{
 		if (!str_isnumber(splited_args[i]))
 			return (0);
 		while (j < ft_bidstrlen(splited_args))
 		{
-			if (ft_strcmp(splited_args[i], splited_args[j]) && i != j)
+			if ((ft_strcmp(splited_args[i], splited_args[j])
+					|| args[i] == args[j]) && i != j)
 				return (0);
 			j++;
 		}
