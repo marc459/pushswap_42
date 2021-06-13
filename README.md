@@ -1,15 +1,15 @@
-HOW TO
+<h3>HOW TO</h3>
 To compile do : make
 
-Execute the 'Pushswap' program and introduce some arguments: ./push_swap "7 9 5 3"
+<p>Execute the 'Pushswap' program and introduce some arguments: ./push_swap "7 9 5 3"</p>
 Pushswap sort all nums and will bring youu back the name of the operations it used.
 
-Execute the 'checker' program and introduce some arguments: ./checker "7 9 5 3"
+<p>Execute the 'checker' program and introduce some arguments: ./checker "7 9 5 3" </p>
 Checker check if the arguments received are nums and if they are sorted after recieve some operation from keyboard. If they are it will bring us back a OK if not KO.
 
-To execute checker over pushswap return just use a pipeline:  ./push_swap "7 9 5 3" | ./checker "7 9 5 3"
+<p>To execute checker over pushswap return just use a pipeline:  ./push_swap "7 9 5 3" | ./checker "7 9 5 3"</p>
 
-FUNCTIONALITY
+<h3>FUNCTIONALITY</h3>
 Pushswap includes two programs:
 Pushswap - 
 
