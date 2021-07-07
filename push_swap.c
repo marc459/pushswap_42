@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:14:26 by msantos-          #+#    #+#             */
-/*   Updated: 2021/07/07 20:30:55 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/07/07 22:00:25 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,11 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	if (argc == 1 || (argc == 2 && ft_strcmp(ft_iteratespaces(argv[1]), "\0")))
+		return (-1);
 	concatargs = concatenate_args(argv + 1, argc - 1);
 	bidargs = ft_split(concatargs, ' ');
 	free(concatargs);
-	if (argc == 1 || (argc == 2 && ft_strcmp(ft_iteratespaces(argv[1]), "\0")))
-		return (-1);
 	if (!arg_checker(bidargs))
 		str_error("Error\n");
 	arg_save(&stack_a, bidargs);
