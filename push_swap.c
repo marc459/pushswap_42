@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 20:14:26 by msantos-          #+#    #+#             */
-/*   Updated: 2021/07/07 19:33:12 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/07/07 20:30:55 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,5 @@ int	main(int argc, char **argv)
 	free_double_ptr(bidargs);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
-	system("leaks push_swap");
 	return (0);
 }

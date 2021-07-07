@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:58:45 by msantos-          #+#    #+#             */
-/*   Updated: 2021/07/07 19:36:39 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/07/07 20:27:48 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*concatenate_args(char **args, int size)
 {
 	char	*tmp;
+	char	*tmp2;
 	char	*args_str;
 	int		i;
 
@@ -23,7 +24,10 @@ char	*concatenate_args(char **args, int size)
 	while (i < size)
 	{
 		tmp = ft_strjoin(args[i], " ");
-		args_str = ft_strjoin(args_str, tmp);
+		tmp2 = ft_strdup(args_str);
+		free(args_str);
+		args_str = ft_strjoin(tmp2, tmp);
+		free(tmp2);
 		free(tmp);
 		i++;
 	}
@@ -64,18 +68,18 @@ int	arg_checker(char **splited_args)
 	while (i < ft_bidstrlen(splited_args))
 	{
 		if (!str_isnumber(splited_args[i]))
-			return (0);
+			return (ft_free_return(args, 0));
 		while (j < ft_bidstrlen(splited_args))
 		{
 			if ((ft_strcmp(splited_args[i], splited_args[j])
 					|| args[i] == args[j]) && i != j)
-				return (0);
+				return (ft_free_return(args, 0));
 			j++;
 		}
 		j = 0;
 		i++;
 	}
-	return ();
+	return (ft_free_return(args, 1));
 }
 
 void	free_double_ptr(char **s)
