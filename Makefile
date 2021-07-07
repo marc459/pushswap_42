@@ -6,7 +6,7 @@
 #    By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/13 17:37:32 by msantos-          #+#    #+#              #
-#    Updated: 2021/06/13 18:45:31 by msantos-         ###   ########.fr        #
+#    Updated: 2021/07/07 17:51:07 by msantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,11 @@ SANITIZE= -fsanitize=address
 
 
 
-all: lib checker push_swap
+all: submodule lib checker push_swap
+
+submodule:
+	@git submodule init
+	@git submodule update --remote
 
 %.o: %.c
 	$(GCC) $(CFLAGS) $(INCLUDES) -o $@ -c $^
