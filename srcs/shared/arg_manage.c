@@ -6,7 +6,7 @@
 /*   By: msantos- <msantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:58:45 by msantos-          #+#    #+#             */
-/*   Updated: 2021/06/13 19:44:03 by msantos-         ###   ########.fr       */
+/*   Updated: 2021/07/07 19:36:39 by msantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	arg_checker(char **splited_args)
 		j = 0;
 		i++;
 	}
-	return (1);
+	return ();
 }
 
 void	free_double_ptr(char **s)
